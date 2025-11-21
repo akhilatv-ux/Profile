@@ -1,0 +1,1149 @@
+.cursor-follower {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 20px;
+   height: 20px;
+   border: 2px solid #ffffff;
+   border-radius: 50%;
+   pointer-events: none;
+   transform: translate(-50%, -50%);
+   transition: transform 0.18s ease, background 0.25s ease, width 0.18s ease, height 0.18s ease;
+   z-index: 9999;
+   mix-blend-mode: difference;
+   /* Always visible on any background */
+}
+
+.cursor-follower.hover {
+   width: 30px;
+   height: 30px;
+   background: #ffffff;
+}
+
+
+
+body {
+   font-family: "Roboto", sans-serif;
+   background-color: #F1F1F1 !important;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none !important;
+}
+
+
+.header {
+   padding: 30px 0;
+   position: absolute;
+   width: 100%;
+   z-index: 2;
+}
+
+.dot {
+   width: 10px;
+   height: 10px;
+   background-color: rgb(0, 202, 0);
+   border-radius: 50%;
+   position: relative;
+}
+
+.dot::after {
+   content: "";
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   top: -5px;
+   left: -5px;
+   background-color: rgba(1, 223, 1, 0.2);
+   border-radius: 50%;
+}
+
+.mobTogg {
+   margin-left: 24px;
+   position: relative;
+   z-index: 22;
+}
+
+.mainmenu {
+   position: fixed;
+   top: 25%;
+   right: 98px;
+   transform: translateY(-50%) translateX(120%);
+   width: 50px;
+   background: #fff;
+   border-radius: 20px;
+   padding: 15px 0;
+   opacity: 0;
+   visibility: hidden;
+   transition: 0.4s ease;
+   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.mainmenu.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(-50%) translateX(0);
+}
+
+.mainmenu ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+}
+
+.mainmenu ul li a i {
+   font-size: 18px;
+   color: #000;
+   transition: .3s ease;
+}
+
+.mainmenu ul li a:hover i {
+   transform: scale(1.25);
+}
+
+.mainmenu ul li a {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.mainmenu ul li a span {
+   position: absolute;
+   left: -90px;
+   opacity: 0;
+   visibility: hidden;
+   background: #000;
+   color: #fff;
+   padding: 6px 14px;
+   border-radius: 6px;
+   font-size: 14px;
+   white-space: nowrap;
+   transform: translateX(10px);
+   transition: 0.3s ease;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mainmenu ul li a:hover span {
+   opacity: 1;
+   visibility: visible;
+   transform: translateX(0);
+}
+
+
+
+
+.menu {
+   display: block;
+   padding-top: 100px;
+}
+
+.menu a {
+   font-size: 20px;
+   display: block;
+   margin-bottom: 12px;
+}
+
+.mobTogg span {
+   display: block;
+   background-color: #000;
+   margin: 6px 0;
+   display: block;
+   width: 28px;
+   height: 2px;
+   transition: all 0.3s;
+}
+
+.mobTogg.show span:nth-child(2) {
+   width: 0;
+}
+
+.mobTogg.show span:nth-child(1) {
+   transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobTogg.show span:nth-child(3) {
+   transform: rotate(-45deg) translate(2px, -2px);
+}
+
+.main {
+   display: flex;
+   align-items: center;
+   justify-content: end;
+   gap: 15px;
+   font-size: 16px;
+
+}
+
+.main a {
+   color: #000000;
+}
+
+.hero {
+   background-image: url(../Assets/hero.png);
+   height: 700px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   position: relative;
+}
+
+.herocont1 {
+   padding-top: 89px;
+}
+
+.herocont1 h1 {
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   color: #454545;
+   font-size: 42px;
+}
+
+.herocont1 h2 {
+   font-size: 48px;
+}
+
+.heroimg img {
+   width: 100%;
+}
+
+.heroimg {
+   position: relative;
+}
+
+#scrollProgress {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   height: 4px;
+   width: 0%;
+   background: #000;
+   z-index: 9999;
+   transition: width 0.1s linear;
+}
+
+.heroimg,
+.aboutimg {
+   perspective: 1000px;
+}
+
+#heroImg,
+#aboutImg,
+#heroCircle {
+
+   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+   transform-style: preserve-3d;
+}
+
+#aboutImg {
+   opacity: 0;
+   transform: translateY(80px) rotateY(90deg);
+}
+
+
+
+/* About Text Reveal */
+.revealText {
+   opacity: 0;
+   transform: translateY(40px);
+   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.revealText.active {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.herocont2 {
+   padding-top: 163px;
+}
+
+.herocont2 h1 {
+   font-size: 60px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+.herocont2 p {
+   color: #454545;
+   font-size: 16px;
+}
+
+.buttons {
+   display: flex;
+   gap: 10px;
+}
+
+.button {
+   padding: 9px;
+   border-radius: 10px;
+   border: 0;
+   color: #fff !important;
+   background: linear-gradient(#000000, #494949);
+   box-shadow: 0px 4px 6px 0px #0008;
+   transition: 0.3s all;
+   display: block;
+   width: fit-content;
+}
+
+.button:hover {
+   color: #000000 !important;
+   background: linear-gradient(#f0eaea, #f6f4f4);
+   box-shadow: 0px 4px 6px 0px rgba(135, 133, 133, 0.533);
+}
+
+.button2 {
+   padding: 9px;
+   border-radius: 10px;
+   border: 0;
+   display: block;
+   color: #000000 !important;
+   background: linear-gradient(#f0eaea, #f6f4f4);
+   box-shadow: 0px 4px 6px 0px rgba(135, 133, 133, 0.533);
+   transition: 0.3s all;
+}
+
+.button2:hover {
+   color: #fff !important;
+   background: linear-gradient(#000000, #494949);
+   box-shadow: 0px 4px 6px 0px #0008;
+}
+
+.circle {
+   background-color: #000000b9;
+   border-radius: 50%;
+   height: 100px;
+   width: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   bottom: -22px;
+   left: -25px;
+}
+
+.wave {
+   font-size: 50px;
+}
+
+.wave {
+   display: inline-block;
+   animation: waveHand 1.2s ease-in-out infinite;
+   transform-origin: 70% 70%;
+}
+
+@keyframes waveHand {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   20% {
+      transform: rotate(15deg);
+   }
+
+   40% {
+      transform: rotate(-10deg);
+   }
+
+   60% {
+      transform: rotate(15deg);
+   }
+
+   80% {
+      transform: rotate(-10deg);
+   }
+
+   100% {
+      transform: rotate(0deg);
+   }
+}
+
+.about {
+   padding-top: 70px;
+}
+
+.about .col-md-6 {
+   display: block;
+   margin: auto;
+}
+
+.aboutcont {
+   padding-left: 63px;
+
+}
+
+.aboutcont h2 {
+   color: #454545;
+   font-size: 30px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+.aboutcont h1 {
+   font-size: 38px;
+   font-weight: 700;
+   color: #000000;
+}
+
+.aboutcont p {
+   color: #3B3B3B;
+   font-size: 16px;
+   line-height: 24px;
+   padding-top: 5px;
+}
+
+.aboutimg img {
+   display: block;
+   margin: auto;
+   width: 65%;
+}
+
+.box {
+   color: #000000;
+   padding: 4px 17px;
+   border-radius: 12px;
+   border: solid 1px #00000057;
+   display: block;
+   width: fit-content;
+   margin-top: 10px;
+   text-decoration: none;
+   transition: all 0.3s;
+
+   background: linear-gradient(to left,
+         #F1F1F1 50%,
+         #000000 50%);
+   background-size: 200% 100%;
+   background-position: right bottom;
+
+   transition: background-position 0.3s ease, color 0.1s ease, border-color 0.1s ease;
+}
+
+.box:hover {
+   background-position: left bottom;
+   color: #ffffff;
+   background: rgba(22, 22, 22, 0.944),
+      rgba(6, 6, 6, 0.579);
+}
+
+
+.aboutbox {
+   display: flex;
+   gap: 20px;
+}
+
+.aboutbox2 {
+   display: flex;
+   gap: 20px;
+   padding-top: 4px;
+   padding-bottom: 29px;
+
+}
+
+.button3 {
+   padding: 9px;
+   border-radius: 10px;
+   border: 0;
+   color: #fff !important;
+   background: linear-gradient(#000000, #494949);
+   box-shadow: 0px 4px 6px 0px #0008;
+   transition: 0.3s all;
+}
+
+.button3:hover {
+   color: #000000 !important;
+   background: linear-gradient(#f0eaea, #f6f4f4);
+   box-shadow: 0px 4px 6px 0px rgba(135, 133, 133, 0.533);
+}
+
+.button3 span {
+   color: #fff;
+}
+
+.button3:hover span {
+   color: #000;
+}
+
+.service {
+   background-image: url(../Assets/service.png);
+   height: 590px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   width: 100%;
+   margin-top: 100px;
+   padding-top: 60px;
+
+}
+
+.servicecont h2 {
+   color: #000000;
+   font-size: 30px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+.rect {
+   color: #000000;
+   padding: 16px 12px;
+   border-radius: 12px;
+   border: solid 1px #00000057;
+   display: flex;
+   gap: 173px;
+   align-items: center;
+   margin-top: 10px;
+   text-decoration: none;
+   transition: all 0.3s;
+}
+
+.rect:hover {
+   color: #fff;
+   background-color: #000000;
+}
+
+.rect:hover p {
+   color: #f6f4f4;
+}
+
+.rect h4 {
+   padding-left: 20px;
+   font-size: 32px;
+}
+
+.rect h3 {
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   font-size: 30PX;
+}
+
+.rect p {
+   max-width: 572px;
+   color: #3B3B3B;
+   font-size: 16px;
+
+}
+
+.rect2 {
+   color: #000000;
+   padding: 16px 12px;
+   border-radius: 12px;
+   border: solid 1px #00000057;
+   display: flex;
+   gap: 123px;
+   align-items: center;
+   margin-top: 10px;
+   padding-left: 20px;
+   text-decoration: none;
+   transition: all 0.3s;
+}
+
+.rect2:hover {
+   color: #fff;
+   background-color: #000000;
+}
+
+.rect2:hover p {
+   color: #f6f4f4;
+}
+
+.rect2 h4 {
+   padding-left: 20px;
+   font-size: 32px;
+}
+
+.rect2 h3 {
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   font-size: 30PX;
+}
+
+.rect2 p {
+   max-width: 589px;
+   color: #3B3B3B;
+   padding-left: 28px;
+   font-size: 16px;
+
+}
+
+.rect3 {
+   color: #000000;
+   padding: 16px 12px;
+   border-radius: 12px;
+   border: solid 1px #00000057;
+   display: flex;
+   gap: 90px;
+   align-items: center;
+   margin-top: 10px;
+   padding-left: 20px;
+   text-decoration: none;
+   transition: all 0.3s;
+}
+
+.rect3:hover {
+   color: #fff;
+   background-color: #000000;
+}
+
+.rect3:hover p {
+   color: #f6f4f4;
+}
+
+.rect3 h4 {
+   padding-left: 20px;
+   font-size: 32px;
+}
+
+.rect3 h3 {
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   font-size: 30PX;
+}
+
+.rect3 p {
+   max-width: 589px;
+   color: #3B3B3B;
+   font-size: 16px;
+
+}
+
+.project {
+   padding-top: 70px;
+   text-align: center;
+}
+
+.projectcon h2 {
+   font-size: 30px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   padding-bottom: 20px;
+
+}
+
+.projctimg img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   padding-bottom: 25px;
+}
+
+.button4 {
+   padding: 9px;
+   border-radius: 10px;
+   border: 0;
+   color: #fff !important;
+   background: linear-gradient(#000000, #494949);
+   box-shadow: 0px 4px 6px 0px #0008;
+   margin-top: 70px;
+   display: block;
+   width: fit-content;
+   margin: auto;
+   transition: 0.3s all;
+}
+
+.button4:hover {
+   color: #000000 !important;
+   background: linear-gradient(#f0eaea, #f6f4f4);
+   box-shadow: 0px 4px 6px 0px rgba(135, 133, 133, 0.533);
+}
+
+.footer {
+   background-image: url(../Assets/footer.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   overflow: hidden;
+   height: 264px;
+   display: block;
+   width: 100%;
+   padding-top: 50px;
+   margin-top: 60px;
+}
+
+.contfoot {
+   text-align: center;
+}
+
+.contfoot h2 {
+   font-size: 30px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+.contfoot p {
+   font-size: 16px;
+   font-style: italic
+}
+
+.bottomm {
+   display: flex;
+   gap: 25px;
+   justify-content: end;
+}
+
+.bottomm a {
+   color: #000000;
+   font-size: 15px;
+}
+
+.bottoms a {
+   color: #000000;
+}
+
+.footerlast {
+   padding-top: 55px;
+
+}
+
+.icons {
+   display: flex;
+   gap: 13px;
+   justify-content: center;
+   padding-bottom: 30px;
+}
+
+.mainmenuf {
+   display: flex;
+   gap: 40px;
+   justify-content: end;
+}
+
+.icons a {
+   color: #000;
+   font-size: 20px;
+
+   transition: .3s;
+}
+
+.icons a.mail:hover {
+   color: #0072ff;
+   transform: scale(1.2);
+}
+
+
+.icons a.whatsapp:hover {
+   color: #25D366;
+   transform: scale(1.2);
+}
+
+.icons a.insta:hover {
+   color: #E1306C;
+   transform: scale(1.2);
+}
+.icons a.linked:hover {
+   color: #005764;
+   transform: scale(1.2);
+}
+
+
+/* About */
+
+.heroa {
+   background-image: url(../Assets/footer.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   overflow: hidden;
+   height: 220px;
+   display: block;
+   width: 100% !important;
+   justify-content: center;
+   position: relative;
+}
+
+.heroconta {
+   text-align: center;
+   padding-top: 77px;
+}
+
+.heroconta h1 {
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   color: #000000;
+   font-size: 42px;
+}
+
+.heroconta p {
+   font-size: 16px;
+   font-style: italic;
+   color: #454545;
+}
+
+.rectskill {
+   padding: 50px 50px;
+   border: none;
+   display: block;
+   margin-top: 10px;
+   border-radius: 5px;
+   text-decoration: none;
+   border-radius: 16px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.but {
+   padding-top: 20px;
+}
+
+.aboutconta {
+   padding-top: 60px;
+   padding-left: 20px;
+
+}
+
+.aboutimga:hover img {
+   width: 100%;
+   opacity: 1;
+   visibility: visible;
+   filter: none;
+   transform: scale(1.06);
+}
+
+.aboutimga img {
+
+   filter: grayscale(8);
+   width: 100%;
+   transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.storysec {
+   padding-top: 83px;
+   padding-bottom: 36px;
+}
+
+.aboutp {
+   text-align: center;
+}
+
+.aboutp h1 {
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.aboutp p {
+   color: #454545;
+   font-size: 16px;
+   font-style: italic;
+}
+
+.strybox1 {
+   padding: 50px 50px;
+   border: none;
+   display: block;
+   margin-top: 10px;
+   border-radius: 5px;
+   text-decoration: none;
+   border-radius: 16px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(5px);
+}
+
+.strybox1:hover {
+   border: solid 1px #000;
+}
+
+.felxbox {
+   display: flex;
+   gap: 119px;
+   padding-bottom: 20px;
+}
+
+.felxbox h5 {
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.felxbox2 {
+   display: flex;
+   gap: 61px;
+   padding-bottom: 20px;
+}
+
+.felxbox2 h5 {
+   font-size: 30px;
+   font-weight: 600;
+}
+
+
+.aboutconta .col-md-8 {
+   display: block;
+   margin: auto;
+}
+
+.aboucoa {
+   padding-left: 21px;
+}
+
+.skills {
+   padding-top: 50px;
+}
+
+.aboucoa h2 {
+   font-family: "Tiro Devanagari Sanskrit", serif;
+   color: #000000;
+   font-size: 30px;
+   font-style: italic;
+}
+
+.aboucoa p {
+   font-size: 16px;
+   color: #454545;
+   max-width: 734px;
+
+
+}
+
+.aboucoa span {
+   color: #000000;
+   font-weight: 600;
+
+}
+
+.aboutboxa {
+   display: flex;
+   gap: 20px;
+}
+
+.aboutbox2a {
+   display: flex;
+   gap: 20px;
+   padding-top: 4px;
+}
+
+.aboutbox3a {
+   display: flex;
+   gap: 20px;
+   padding-top: 4px;
+   padding-bottom: 15px;
+}
+
+.skills .col-md-6 {
+   display: block;
+   margin: auto;
+}
+
+.conta h3 {
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.conta p {
+   color: #454545;
+   font-size: 16px;
+   font-style: italic;
+}
+
+.servicea {
+   padding-top: 70px;
+
+}
+
+.seviceha {
+   text-align: center;
+   align-items: center;
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.recta {
+   background-color: #FFFFFF;
+   border: none;
+   display: block;
+   margin-top: 10px;
+   border-radius: 5px;
+   text-decoration: none;
+   padding: 29px;
+   align-items: center;
+   text-align: center;
+   box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.4);
+   -webkit-box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.4);
+   -moz-box-shadow: 3px 5px 10px -1px rgba(0, 0, 0, 0.4);
+}
+
+.heada {
+   display: flex;
+   gap: 70px;
+   padding-top: 10px;
+}
+
+.heada h4 {
+   font-size: 24px;
+   font-weight: 700;
+}
+
+.recta p {
+   font-size: 16px;
+   line-height: 24px;
+   padding-top: 12px;
+}
+
+.servicecont p {
+   color: #454545;
+   font-size: 16px;
+   font-style: italic;
+}
+
+
+
+
+
+
+/* contact */
+.displayc {
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+   padding-top: 40px;
+}
+
+.displayc h2 {
+   padding-top: 20px;
+   font-size: 36px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+.parac {
+   color: #454545;
+   font-size: 16px;
+   font-style: italic;
+   text-align: center;
+}
+
+.formc {
+   padding-top: 60px;
+}
+
+.rectfocus {
+   border: solid 1PX #0000006e;
+   border-radius: 20px;
+   display: block;
+   margin-top: 10px;
+
+   text-decoration: none;
+   padding: 45px;
+
+}
+
+.formcont {
+   display: flex;
+}
+
+.fomr1 {
+   display: flex;
+   gap: 40px;
+   padding-top: 16px;
+}
+
+.nameinputc {
+   padding: 13px;
+   border-radius: 8px;
+   width: 328px;
+   color: #3B3B3B;
+   border: solid 1px #00000057;
+   background-color: #F1F1F1;
+   margin-top: 10px;
+}
+
+.nameinputc::placeholder {
+   color: #3B3B3B;
+
+}
+
+.msginputc {
+   width: 92%;
+   border-radius: 8px;
+   border: solid 1px #00000057;
+   background-color: #F1F1F1;
+   padding: 10px;
+   margin-top: 10px;
+}
+
+.messagec textarea {
+   resize: none;
+   min-height: 120px;
+   color: #3B3B3B !important;
+}
+
+
+.messagec {
+   padding-top: 16px;
+   padding-bottom: 16px;
+
+}
+
+.formcont .col-md-5 {
+   margin: auto;
+}
+
+.formcont h3 {
+   font-size: 30px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+
+}
+
+.formcont p {
+   max-width: 468px;
+   font-style: italic;
+}
+
+
+
+
+
+/* project*/
+.servicenamea h2 {
+   padding-top: 50px;
+   font-size: 36px;
+   font-family: "Tiro Devanagari Sanskrit", serif;
+
+}
+
+.serviceimg {
+   position: relative;
+   overflow: hidden;
+}
+
+.serviceimg::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 98%;
+   left: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.65);
+   opacity: 0;
+   transition: 0.4s ease;
+}
+
+.serviceimg:hover::after {
+   opacity: 1;
+}
+
+.serviceimg .collectioncontent {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -40%) scale(0.9);
+   text-align: center;
+   color: #ffffff;
+   opacity: 0;
+   z-index: 1;
+   transition: 0.4s ease;
+}
+
+.serviceimg:hover .collectioncontent {
+   opacity: 1;
+   transform: translate(-50%, -50%) scale(1);
+}
+
+.serviceimg img {
+   width: 100%;
+   object-fit: cover;
+   transition: 0.4s ease;
+   padding-top: 40px;
+
+
+}
+
+.serviceimg:hover img {
+   filter: blur(3px);
+   transform: scale(1.07);
+
+
+}

@@ -1,0 +1,377 @@
+@media screen and (max-width: 1024px) {
+    .herocont1 h1 {
+        font-size: 30px;
+    }
+
+    .herocont2 h1 {
+        font-size: 43px;
+    }
+
+    .box h5 {
+        font-size: 14px;
+    }
+
+    .rect h3 {
+        font-size: 24PX;
+    }
+
+    .rect {
+        gap: 62px;
+    }
+
+    .rect2 h3 {
+        font-size: 24PX;
+    }
+
+    .rect2 {
+        gap: 22px;
+    }
+
+    .rect3 h3 {
+        font-size: 24PX;
+    }
+
+    .rect3 {
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        display: block;
+        padding-top: 120px;
+        height: 484px;
+    }
+
+    .circle {
+        height: 84px;
+        width: 84px;
+    }
+
+    .wave {
+        font-size: 41px;
+    }
+
+    .about {
+        padding-top: 19px;
+    }
+
+    .herocont1 {
+        padding-top: 89px;
+    }
+
+    .herocont1 h2 {
+        font-size: 35px;
+    }
+
+    .herocont2 h1 {
+        font-size: 31px;
+    }
+
+    .herocont2 p {
+        font-size: 14px;
+    }
+
+    .herocont1 h1 {
+        font-size: 22px;
+    }
+
+    .aboutcont {
+        padding-left: 0;
+    }
+
+    #aboutImg {
+        padding-top: 30px;
+    }
+
+    .aboutimg img {
+
+        width: 100%;
+    }
+
+    .aboutbox {
+        display: block;
+    }
+
+    .aboutbox2 {
+        display: block;
+    }
+
+    .rect {
+        display: block;
+    }
+
+    .rect2 {
+        display: block;
+    }
+
+    .rect3 {
+        display: block;
+    }
+
+    .rect h4 {
+        padding-left: 0px;
+    }
+
+    .rect2 h4 {
+        padding-left: 0px;
+    }
+
+    .rect3 h4 {
+        padding-left: 0px;
+    }
+
+    .rect2 p {
+        padding-left: 0;
+    }
+
+    .service {
+        height: 781px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding-top: 0px;
+        height: 517px;
+    }
+
+    .herocont2 {
+        padding-top: 0;
+    }
+
+    .about {
+        padding-top: 422px;
+    }
+
+    .aboutcont {
+        padding-left: 0;
+    }
+
+    #aboutImg {
+        padding-top: 30px;
+    }
+
+    .aboutimg img {
+
+        width: 100%;
+    }
+
+    .aboutbox {
+        display: block;
+    }
+
+    .aboutbox2 {
+        display: block;
+    }
+
+    .rect {
+        display: block;
+    }
+
+    .rect2 {
+        display: block;
+    }
+
+    .rect3 {
+        display: block;
+    }
+
+    .rect h4 {
+        padding-left: 0px;
+    }
+
+    .rect2 h4 {
+        padding-left: 0px;
+    }
+
+    .rect3 h4 {
+        padding-left: 0px;
+    }
+
+    .rect2 p {
+        padding-left: 0;
+    }
+
+    .service {
+        height: 860px;
+    }
+
+    .project {
+        padding-top: 60px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* about */
+@media screen and (max-width: 1024px) {
+    .felxbox {
+        display: flex;
+        gap: 78px;
+    }
+
+    .felxbox h5 {
+        font-size: 20px;
+    }
+
+    .felxbox p {
+        font-size: 14px;
+    }
+
+    .felxbox2 {
+        display: flex;
+        gap: 37px;
+    }
+
+    .felxbox2 h5 {
+        font-size: 20px;
+    }
+
+    .felxbox2 p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box h5 {
+        font-size: 16px;
+    }
+
+    .aboutbox2a {
+        gap: 10px;
+    }
+
+    .aboutboxa {
+        gap: 15px;
+    }
+
+    .felxbox {
+        gap: 17px;
+    }
+
+    .felxbox p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .aboucoa {
+        padding-left: 0;
+        padding-top: 25px;
+    }
+}
+
+/* project */
+
+@media screen and (max-width: 428px) {
+    .mainmenu {
+        position: fixed;
+        top: 43%;
+        right: 2px;
+    }
+
+    .collectioncontent h3 {
+        font-size: 15px;
+    }
+
+    .collectioncontent p {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact */
+@media screen and (max-width: 1024px) {
+    .mainmenu {
+        position: fixed;
+        top: 43%;
+        right: 33px;
+    }
+
+    .nameinputc {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .formcont {
+        display: flex;
+        gap: 20px;
+    }
+
+    .fomr1 {
+        display: block;
+    }
+
+    .nameinputc {
+        width: 91%;
+    }
+}
+
+@media screen and (max-width: 428px) {
+
+
+    .heroconta h1 {
+        font-size: 28px;
+    }
+
+    .heroconta p {
+        font-size: 14px;
+    }
+
+    .displayc {
+        justify-content: normal;
+    }
+
+    .heroconta {
+        padding-top: 101px;
+    }
+
+    .parac {
+        font-size: 14px;
+    }
+
+    .formcont {
+        display: block;
+    }
+
+    .footer {
+        height: 302px;
+    }
+
+    .mainmenuf {
+
+        justify-content: normal;
+    }
+}
