@@ -464,7 +464,7 @@ a {
 }
 
 .button3 span {
-   color: #fff;
+   color: #fff !important;
 }
 
 .button3:hover span {
@@ -826,6 +826,7 @@ a {
    padding: 50px 50px;
    border: none;
    display: block;
+   height: 100%;
    margin-top: 10px;
    border-radius: 5px;
    text-decoration: none;
@@ -833,30 +834,34 @@ a {
    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
    backdrop-filter: blur(5px);
 }
-
+.storysec .col-md-6{
+margin-bottom: 30px;
+}
 .strybox1:hover {
    border: solid 1px #000;
 }
 
 .felxbox {
    display: flex;
-   gap: 119px;
+   gap: 28px;
    padding-bottom: 20px;
 }
 
 .felxbox h5 {
-   font-size: 30px;
+   font-size: 28px;
+   font-style: italic;
    font-weight: 600;
 }
 
 .felxbox2 {
    display: flex;
-   gap: 61px;
+   gap: 28px;
    padding-bottom: 20px;
 }
 
 .felxbox2 h5 {
-   font-size: 30px;
+    font-size: 28px;
+   font-style: italic;
    font-weight: 600;
 }
 
@@ -910,7 +915,7 @@ a {
    display: flex;
    gap: 20px;
    padding-top: 4px;
-   padding-bottom: 15px;
+   padding-bottom: 30px;
 }
 
 .skills .col-md-6 {
