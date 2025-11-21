@@ -367,11 +367,25 @@
     }
 
     .footer {
-        height: 302px;
+        height: 354px;
     }
 
     .mainmenuf {
+        display: block;
+    }
 
-        justify-content: normal;
+    .bottomm {
+        justify-content: start;
+        padding-top: 14px;
+    }
+
+    .bottomm ol,
+    ul {
+        padding-left: 0.5rem !important;
+    }
+
+    .icons {
+        justify-content: start;
+        padding-left: 10px;
     }
 }
