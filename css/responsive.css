@@ -40,7 +40,7 @@
     .hero {
         display: block;
         padding-top: 120px;
-        height: 484px;
+        height: 100%;
     }
 
     .circle {
@@ -130,10 +130,10 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     .hero {
         padding-top: 0px;
-        height: 517px;
+        height: 100%;
     }
 
     .herocont2 {
@@ -141,7 +141,11 @@
     }
 
     .about {
-        padding-top: 422px;
+        padding-top: 50px;
+    }
+    .herocont2 h1{
+        padding-top: 40px;
+
     }
 
     .aboutcont {
@@ -325,6 +329,9 @@
 
 @media screen and (max-width: 768px) {
 
+     .footer {
+        height: 100%;
+    }
     .formcont {
         display: flex;
         gap: 20px;
@@ -339,7 +346,7 @@
     }
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 600px) {
 
 
     .heroconta h1 {
