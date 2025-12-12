@@ -348,6 +348,10 @@
 
 @media screen and (max-width: 600px) {
 
+    .cursor-follower{
+        display: none;
+    }
+
 
     .heroconta h1 {
         font-size: 28px;

@@ -11,7 +11,7 @@
    transition: transform 0.18s ease, background 0.25s ease, width 0.18s ease, height 0.18s ease;
    z-index: 9999;
    mix-blend-mode: difference;
-   /* Always visible on any background */
+
 }
 
 .cursor-follower.hover {
