@@ -98,36 +98,39 @@
                 </div>
               </div>
               <div class="col-md-7">
-                <form>
+                <form id="contactForm">
+
                   <div class="fomr1">
                     <div class="namec">
-
-                      <input type="namec" placeholder="Name" class="nameinputc">
+                      <input type="text" name="name" placeholder="Name" class="nameinputc" required>
                     </div>
 
                     <div class="namec">
-
-                      <input type="namec" placeholder="Phone Number" class="nameinputc">
+                      <input type="tel" name="phone" placeholder="Phone Number" class="nameinputc" required>
                     </div>
                   </div>
 
                   <div class="fomr1">
                     <div class="namec">
-                      <input type="namec" placeholder="Email Address" class="nameinputc">
+                      <input type="email" name="email" placeholder="Email Address" class="nameinputc" required>
                     </div>
 
                     <div class="namec">
-
-                      <input type="namec" placeholder="Project" class="nameinputc">
+                      <input type="text" name="project" placeholder="Project" class="nameinputc">
                     </div>
                   </div>
 
                   <div class="messagec">
-                    <textarea name="messagec" placeholder="Write Your Message Here...." class="msginputc"></textarea>
+                    <textarea name="message" placeholder="Write Your Message Here...." class="msginputc"
+                      required></textarea>
                   </div>
+
+                  <!-- Submit Button -->
+                  <button type="submit" class="button">Submit</button>
+
                 </form>
-                <a href="" class="button">Submit </a>
               </div>
+
             </div>
 
 
@@ -176,7 +179,7 @@
 
                   <a href="https://www.instagram.com/akhila___tv/" class="insta" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
-                    <a href="https://www.linkedin.com/in/akhila-tv"   class="linked" target="_blank">
+                    <a href="https://www.linkedin.com/in/akhila-tv" class="linked" target="_blank">
                       <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
@@ -192,7 +195,31 @@
 
 
 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+<script>
+  (function(){
+    emailjs.init("Rt-R0mY7RFet6sHg9");
+  })();
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_uywdsai",
+      "template_e0i13qw",
+      this
+    ).then(
+      function() {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      },
+      function(error) {
+        alert("Failed to send message: " + error.text);
+      }
+    );
+  });
+</script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
